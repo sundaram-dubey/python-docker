@@ -5,6 +5,10 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY xmltojson.py .
+# uncomment respectiv of which file you need to run
+#COPY xmltojson.py .
+COPY call-sql-proc.py .
 
-ENTRYPOINT ["python", "xmltojson.py"]
+#ENTRYPOINT ["python", "xmltojson.py"]
+ENTRYPOINT ["python", "call-sql-proc.py"]
+
